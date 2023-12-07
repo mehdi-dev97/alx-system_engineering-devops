@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Fixes the issue with the server
-chmod 644 /etc/nginx/nginx.conf
-sed -Ei 's/\s*#?\s*user .*/user nginx;/' /etc/nginx/nginx.conf
-sed -Ei 's/(listen (\[::\]:)?80) /\180 /' /etc/nginx/sites-enabled/default
-pkill apache2
-su nginx -s /bin/bash -c 'service nginx restart'
+# what’s keeping your Ubuntu container’s Nginx installation from listening on port 8?
+# configures nginx to run and listen to port 80
+
+rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart
