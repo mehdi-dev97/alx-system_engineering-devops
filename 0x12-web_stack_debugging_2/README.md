@@ -14,3 +14,8 @@
 - Your Bash scripts must run without error
 - The first line of all your Bash scripts should be exactly #!/usr/bin/env bash
 - The second line of all your Bash scripts should be a comment explaining what is the script doing
+
+### Tasks
+
+0. Run software as another user
+1. Run Nginx as Nginx
